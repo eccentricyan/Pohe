@@ -80,9 +80,6 @@ public class ArticleListFragment extends BaseFragment {
         Bundle args = getArguments();
         topicId = args.getString(ARGS_NAME);
         viewModel = new ArticleListViewModel(component, topicId);
-//        binding.recyclerViewRepos.scrollEvents(this)
-//        RxRecyclerView.scrollEvents(binding.recyclerViewRepos)
-//        Icepick.restoreInstanceState(viewModel, savedInstanceState);
 
         binding.setViewModel(viewModel);
 

@@ -29,3 +29,4 @@ deployment:
         commands:
             - ./gradlew assembleDebug
             - ./gradlew app:crashlyticsUploadDistributionRelease
+            - ./gradlew clean assembleRelease publishApkRelease

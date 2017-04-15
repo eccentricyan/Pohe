@@ -1,5 +1,7 @@
 package com.eccentricyan.pohe;
 
+import com.crashlytics.android.Crashlytics;
+import com.crashlytics.android.core.CrashlyticsCore;
 import com.eccentricyan.pohe.common.migration.Migration;
 import com.facebook.stetho.Stetho;
 import com.twitter.sdk.android.Twitter;
@@ -38,11 +40,22 @@ public class MyApplication extends Application {
                         .enableWebKitInspector(RealmInspectorModulesProvider.builder(this).build())
                         .build());
         initTwitterClient();
+        initCrashlytics();
     }
 
     private void initTwitterClient() {
         final TwitterAuthConfig authConfig = new TwitterAuthConfig(CONSUMER_KEY, CONSUMER_SECRET);
         Fabric.with(this, new Twitter(authConfig));
+    }
+
+    private void initCrashlytics() {
+        // Set up Crashlytics, disabled for debug builds
+        Crashlytics crashlyticsKit = new Crashlytics.Builder()
+                .core(new CrashlyticsCore.Builder().disabled(BuildConfig.DEBUG).build())
+                .build();
+
+        // Initialize Fabric with the debug-disabled crashlytics.
+        Fabric.with(this, crashlyticsKit, new Crashlytics());
     }
 
     public static MyApplication getInstance() {

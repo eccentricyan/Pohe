@@ -18,3 +18,14 @@ dependencies:
 test:
   override:
     - ./gradlew clean test
+deployment:
+    develop:
+        branch: develop
+        commands:
+            - ./gradlew assembleDebug
+            - ./gradlew app:crashlyticsUploadDistributionDebug
+    production:
+        branch: master
+        commands:
+            - ./gradlew assembleDebug
+            - ./gradlew app:crashlyticsUploadDistributionRelease

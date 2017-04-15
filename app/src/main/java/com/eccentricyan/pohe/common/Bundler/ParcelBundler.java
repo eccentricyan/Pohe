@@ -1,0 +1,26 @@
+package com.eccentricyan.pohe.common.Bundler;
+
+import android.os.Bundle;
+
+import org.parceler.Parcels;
+
+import java.util.List;
+
+import icepick.Bundler;
+
+/**
+ * Created by shiyanhui on 2017/04/15.
+ */
+
+public class ParcelBundler implements Bundler<Object> {
+
+    @Override
+    public void put(String key, Object value, Bundle bundle) {
+        bundle.putParcelable(key, Parcels.wrap(value));
+    }
+
+    @Override
+    public List<?> get(String key, Bundle bundle) {
+        return Parcels.unwrap(bundle.getParcelable(key));
+    }
+}

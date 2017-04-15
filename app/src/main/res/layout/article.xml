@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="viewModel" type="com.eccentricyan.pohe.presentation.article.ArticleViewModel" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:clickCommand="@{viewModel.itemClickCommand}">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:padding="8dip">
+            <TextView
+                android:id="@+id/name"
+                android:text="@{viewModel.title}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/cardview_dark_background"
+                android:paddingLeft="12dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:scrollHorizontally="true"
+                android:lineSpacingMultiplier="1.5"
+                android:layout_toRightOf="@+id/icon"/>
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="96dip"
+                android:layout_height="96dip"
+                android:layout_alignParentLeft="true"
+                app:imageUrl="@{viewModel.thumbnail}"
+                android:background="#e3ebea"/>
+        </RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#eff0f1"/>
+    </LinearLayout>
+</layout>

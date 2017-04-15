@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "34001452391",
+    "firebase_url": "https://pohe-7a3e8.firebaseio.com",
+    "project_id": "pohe-7a3e8",
+    "storage_bucket": "pohe-7a3e8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:34001452391:android:1ed57b7c1b0fca8f",
+        "android_client_info": {
+          "package_name": "com.eccentricyan.pohe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "34001452391-kf81k77eulnehj63vmj7jddh7ubjq7ko.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnyiCoUb-SJlwiyH85TdtMUlKyS1vtaeU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

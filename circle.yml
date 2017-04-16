@@ -15,6 +15,7 @@ dependencies:
     - echo y | android update sdk --no-ui --all --filter "extra-android-m2repository"
     - mkdir $ANDROID_HOME/licenses
     - echo $ANDROID_SDK_LICENSE_VALUE > $ANDROID_HOME/licenses/android-sdk-license
+    - openssl aes-256-cbc -d -in secret-env-cipher -k $KEY >> ~/.circlerc
 test:
   override:
     - ./gradlew clean test

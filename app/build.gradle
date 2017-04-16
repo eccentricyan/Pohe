@@ -26,7 +26,7 @@ android {
 
     signingConfigs {
         release {
-            storeFile file('./.buildscript/release.keystore')
+            storeFile rootProject.file('./.buildscript/release.keystore')
             storePassword RELEASE_STORE_PASSWORD
             keyAlias RELEASE_KEY_ALIAS
             keyPassword RELEASE_KEY_PASSWORD

@@ -62,7 +62,7 @@ android {
 }
 
 play {
-    serviceAccountEmail = SERVICE_ACCOUNT_EMAIL
+    serviceAccountEmail = System.getenv("SERVICE_ACCOUNT_EMAIL")
     pk12File = rootProject.file("./.buildscript/key.p12")
     track = 'production'
     untrackOld = true

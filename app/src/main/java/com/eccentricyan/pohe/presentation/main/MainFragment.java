@@ -17,6 +17,7 @@ import com.eccentricyan.pohe.databinding.FragmentMainBinding;
 import com.eccentricyan.pohe.presentation.article.ArticleListFragment;
 import com.eccentricyan.pohe.presentation.base.BaseFragment;
 import com.eccentricyan.pohe.presentation.category.CategoryViewModel;
+import com.eftimoff.viewpagertransformers.RotateDownTransformer;
 import com.eftimoff.viewpagertransformers.RotateUpTransformer;
 import com.eftimoff.viewpagertransformers.StackTransformer;
 
@@ -85,7 +86,7 @@ public class MainFragment extends BaseFragment {
         viewPager.setOffscreenPageLimit(adapter.getCount() - 1);
         viewPager.setOffscreenPageLimit(3);
         viewPager.setPageTransformer(true, new
-                StackTransformer());
+                RotateDownTransformer());
     }
 
     @Override

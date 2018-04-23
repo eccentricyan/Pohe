@@ -21,7 +21,7 @@ repositories {
 def appcompatVersion = '25.2.0'
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion 26
     buildToolsVersion "25.0.2"
 
     signingConfigs {
@@ -124,6 +124,7 @@ dependencies {
     provided 'frankiesardo:icepick-processor:3.2.0'
     provided 'javax.annotation:jsr250-api:1.0'
     provided 'org.projectlombok:lombok:1.16.10'
+    compile 'com.eftimoff:android-viewpager-transformers:1.0.1@aar'
 }
 
 

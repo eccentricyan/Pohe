@@ -20,14 +20,17 @@ import com.eccentricyan.pohe.presentation.category.CategoryViewModel
 import com.eftimoff.viewpagertransformers.RotateDownTransformer
 import com.eftimoff.viewpagertransformers.RotateUpTransformer
 import com.eftimoff.viewpagertransformers.StackTransformer
+import com.github.yamamotoj.pikkel.Pikkel
+import com.github.yamamotoj.pikkel.PikkelDelegate
 
-import icepick.Icepick
+//import icepick.Icepick
+//import icepick.Icepick.restoreInstanceState
 
 /**
  * Created by shiyanhui on 2017/04/15.
  */
 
-class MainFragment : BaseFragment() {
+class MainFragment : BaseFragment(), Pikkel by PikkelDelegate() {
     private var binding: FragmentMainBinding? = null
     private var mListener: OnFragmentInteractionListener? = null
     private var mViewPager: ViewPager? = null
@@ -44,7 +47,7 @@ class MainFragment : BaseFragment() {
             Toast.makeText(this.context, "ネットに繋がっていません", Toast.LENGTH_LONG).show()
         }
         adapter = ViewPagerAdapter(fragmentManager)
-        Icepick.restoreInstanceState<MainFragment>(this, savedInstanceState)
+        restoreInstanceState(savedInstanceState)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -92,7 +95,7 @@ class MainFragment : BaseFragment() {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        Icepick.saveInstanceState<MainFragment>(this, outState)
+        saveInstanceState(outState)
     }
 
     /**

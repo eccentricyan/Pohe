@@ -1,5 +1,6 @@
 apply plugin:'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'com.github.triplet.play'
 apply plugin: 'com.android.application'
 apply plugin: 'me.tatarka.retrolambda'
@@ -121,7 +122,8 @@ dependencies {
     compile 'com.jakewharton.timber:timber:4.5.1'
     compile 'com.android.support:support-v4:25.3.1'
     testCompile 'junit:junit:4.12'
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.9'
+    kapt 'com.google.dagger:dagger-compiler:2.9'
+    kapt "com.android.databinding:compiler:2.3.3"
     debugCompile 'com.facebook.stetho:stetho-timber:1.4.2@aar'
     provided 'frankiesardo:icepick-processor:3.2.0'
     provided 'javax.annotation:jsr250-api:1.0'

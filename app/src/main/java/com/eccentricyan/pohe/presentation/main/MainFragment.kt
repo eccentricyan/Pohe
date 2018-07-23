@@ -46,7 +46,7 @@ class MainFragment : BaseFragment(), Pikkel by PikkelDelegate() {
         if (!NetUtils.checkNet(this.context)) {
             Toast.makeText(this.context, "ネットに繋がっていません", Toast.LENGTH_LONG).show()
         }
-        adapter = ViewPagerAdapter(fragmentManager)
+        adapter = ViewPagerAdapter(getFragmentManager())
         restoreInstanceState(savedInstanceState)
     }
 

@@ -43,10 +43,10 @@ class MainFragment : BaseFragment(), Pikkel by PikkelDelegate() {
         super.onCreate(savedInstanceState)
         if (arguments != null) {
         }
-        if (!NetUtils.checkNet(this.context)) {
+        if (!NetUtils.checkNet(this.context!!)) {
             Toast.makeText(this.context, "ネットに繋がっていません", Toast.LENGTH_LONG).show()
         }
-        adapter = ViewPagerAdapter(getFragmentManager())
+        adapter = ViewPagerAdapter(fragmentManager)
         restoreInstanceState(savedInstanceState)
     }
 
@@ -62,9 +62,9 @@ class MainFragment : BaseFragment(), Pikkel by PikkelDelegate() {
 
         tabLayout = binding!!.topicTabs
         mViewPager = binding!!.topicContainer
-        categoryViewModel = CategoryViewModel(component)
+        categoryViewModel = CategoryViewModel(component!!)
         categoryViewModel!!.category().subscribe { category ->
-            setupViewPager(mViewPager, category.categories)
+            setupViewPager(mViewPager, category.categories!!)
             tabLayout!!.setupWithViewPager(mViewPager)
         }
     }
